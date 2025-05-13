@@ -52,7 +52,7 @@ function ProfileDetails() {
 
     try {
       const profileDetailsResponce = await axios.post(
-        `http://localhost:4000/api/v1/profileDetails/profileDetails`,
+        `https://greencart-ecommers-backend.onrender.com/api/v1/profileDetails/profileDetails`,
         combinedData,
         {
           headers: { "Content-Type": "application/json" },

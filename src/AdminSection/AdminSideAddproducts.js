@@ -75,7 +75,7 @@ function AdminSideAddproducts() {
 
         try {
             const response = await axios.post(
-                "http://localhost:4000/api/v1/addproducts/addProducts",
+                "https://greencart-ecommers-backend.onrender.com/api/v1/addproducts/addProducts",
                 data,
                 {
                     headers: {

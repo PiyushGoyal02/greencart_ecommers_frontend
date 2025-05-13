@@ -38,7 +38,7 @@ const UserLoginSignup = () => {
     e.preventDefault();
     setLoading(true)
     try {
-      const res = await axios.post(`http://localhost:4000/api/v1/signup/signup`, SignUp, {
+      const res = await axios.post(`https://greencart-ecommers-backend.onrender.com/api/v1/signup/signup`, SignUp, {
         headers: { "Content-Type": "application/json" },
       });
 
@@ -54,7 +54,7 @@ const UserLoginSignup = () => {
 
       // This API for Email sendar
       try{
-        const emailResponse = await axios.post(`http://localhost:4000/api/v1/mailSend/sendMail`, {email: SignupEmail}, {
+        const emailResponse = await axios.post(`https://greencart-ecommers-backend.onrender.com/api/v1/mailSend/sendMail`, {email: SignupEmail}, {
           headers: { "Content-Type": "application/json" },
         })
         console.log(emailResponse, "emailResponse")
@@ -75,7 +75,7 @@ const UserLoginSignup = () => {
     e.preventDefault();
     setLoading(true)
     try {
-      const res = await axios.post(`http://localhost:4000/api/v1/login/login`, LogIn, {
+      const res = await axios.post(`https://greencart-ecommers-backend.onrender.com/api/v1/login/login`, LogIn, {
         headers: { "Content-Type": "application/json" },
       });
       const userLoginUserId = res.data.user._id;

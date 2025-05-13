@@ -10,7 +10,7 @@ function AdminSideAllUsers() {
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const response = await axios.get(`http://localhost:4000/api/v1/getAllusersData/allUserDetails`, {
+        const response = await axios.get(`https://greencart-ecommers-backend.onrender.com/api/v1/getAllusersData/allUserDetails`, {
           withCredentials: true, 
         });
         console.log(response.data);

@@ -44,7 +44,7 @@ function AdminLoginSigup() {
     e.preventDefault();
     try {
       const responceSignup = await axios.post(
-        `http://localhost:4000/api/v1/signup/signup`,
+        `https://greencart-ecommers-backend.onrender.com/api/v1/signup/signup`,
         SignUp,
         {
           headers: {"Content-Type": "application/json"},
@@ -63,7 +63,7 @@ function AdminLoginSigup() {
     e.preventDefault();
     try {
       const responceLogin = await axios.post(
-        `http://localhost:4000/api/v1/adminLogin/adminlogin`,
+        `https://greencart-ecommers-backend.onrender.com/api/v1/adminLogin/adminlogin`,
         LogIn,
         {
           headers: { "Content-Type": "application/json" },

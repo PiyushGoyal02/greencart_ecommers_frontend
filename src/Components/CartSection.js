@@ -52,7 +52,7 @@ function CartSection() {
   };
 
   try {
-    const cartResponse = await axios.post("http://localhost:4000/api/v1/cartItemsAdd/cartItemAdd", combinedData, {
+    const cartResponse = await axios.post("https://greencart-ecommers-backend.onrender.com/api/v1/cartItemsAdd/cartItemAdd", combinedData, {
       headers: { "Content-Type": "application/json" },
     });
     const CartId = cartResponse.data.data._id;
@@ -75,7 +75,7 @@ function CartSection() {
 
     console.log(process.env.REACT_APP_RAZORPAY_KEY_ID, "Rezorpay_ID")
 
-    const orderResponse = await axios.post("http://localhost:4000/api/v1/placeOrder/placeOrder", orderPayload, {
+    const orderResponse = await axios.post("https://greencart-ecommers-backend.onrender.com/api/v1/placeOrder/placeOrder", orderPayload, {
       headers: { "Content-Type": "application/json" },
     });
 
