@@ -1,0 +1,273 @@
+/* .HomePageMainDiv{
+  overflow: auto;
+  scrollbar-width: none; 
+  -ms-overflow-style: none;
+} */
+
+.productsForWebsite{
+    display: block;
+  }
+
+  .productsForMobilePhone{
+    display: none;
+  }
+
+.Categories-text-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.Categories-text {
+  font-size: 30px;
+  font-weight: bold;
+  margin: 50px 0 30px;
+  border-bottom: 3px solid #4caf50;
+  display: inline-block;
+  padding-bottom: 6px;
+  color: #333;
+  font-family: "Segoe UI", sans-serif;
+}
+
+
+.Images-SectionDiv {
+  margin: 40px auto 40px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 55px;
+}
+
+.Images {
+  width: 140px;
+  height: 140px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.Images:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Veggie Section */
+
+.veggie-section {
+  padding: 60px 20px;
+  text-align: center;
+  font-family: "Segoe UI", sans-serif;
+  background-color: #f9f9f9;
+}
+
+.veggie-section h2 {
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 35px;
+  border-bottom: 3px solid #4caf50;
+  display: inline-block;
+  padding-bottom: 6px;
+  color: #333;
+}
+
+.veggie-grid {
+  display: flex;
+  justify-content: center;
+  gap: 55px;
+  flex-wrap: wrap;
+}
+
+.veggie-card {
+  width: 200px;
+  border: 1px solid #e0e0e0;
+  border-radius: 16px;
+  padding: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.veggie-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.veggie-card img {
+  width: 130px;
+  height: 130px;
+  object-fit: contain;
+  margin-bottom: 10px;
+  border-radius: 8px;
+}
+
+.category {
+  color: #888;
+  font-size: 13px;
+  margin-bottom: 5px;
+}
+
+h3 {
+  font-size: 16px;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.stars {
+  color: #4caf50;
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.stars .count {
+  color: #666;
+  font-size: 13px;
+  margin-left: 5px;
+}
+
+.price {
+  margin-bottom: 12px;
+}
+
+.price .new {
+  color: #4caf50;
+  font-weight: bold;
+  margin-right: 8px;
+}
+
+.price .old {
+  text-decoration: line-through;
+  color: #aaa;
+  font-size: 14px;
+}
+
+.add-btn {
+  background: #e0f5e9;
+  border: 1px solid #4caf50;
+  padding: 6px 15px;
+  color: #4caf50;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: background 0.3s, color 0.3s;
+}
+
+.add-btn:hover {
+  background-color: #4caf50;
+  color: #fff;
+}
+
+
+/* Happy Family Image CSS */
+.happyFamilyImageDiv{
+  padding: 3%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.HappyFamilyImage{
+  width: 1200px;
+  height: 600px;
+  border-radius: 10px;
+  object-fit: cover;
+  object-position: center;
+}
+
+
+/* Subscribe Section CSS Code */
+
+.newsletter-container {
+  text-align: center;
+  padding: 60px 20px;
+  background-color: #ffffff;
+}
+
+.newsletter-title {
+  font-size: 2rem;
+  color: #1c1c1c;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.newsletter-subtitle {
+  font-size: 1rem;
+  color: #888888;
+  margin-bottom: 30px;
+}
+
+.newsletter-input-group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.newsletter-input {
+  flex: 1;
+  padding: 12px 16px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px 0 0 6px;
+  outline: none;
+}
+
+.newsletter-button {
+  background-color: #40b883;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 0 6px 6px 0;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.newsletter-button:hover {
+  background-color: #369e6f;
+}
+
+
+@media (max-width:768px) {
+  .Categories-text{
+    font-size: 21.5px;
+  }
+
+  .Images{
+    width: 120px;
+    height: 120px;
+  }
+
+  .Images-SectionDiv {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5%;
+  }
+
+  .OrganicVeggies{
+    font-size: 21.5px;
+  }
+
+  .veggie-section h2 {
+    font-size: 21.5px;
+  }
+
+  .productsForWebsite{
+    display: none;
+  }
+
+  .productsForMobilePhone{
+    display: block;
+  }
+
+  .HappyFamilyImage{
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    object-position: center;
+  }
+}

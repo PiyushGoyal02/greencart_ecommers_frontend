@@ -1,0 +1,106 @@
+.veggie-section {
+  padding: 60px 20px;
+  text-align: center;
+  font-family: "Segoe UI", sans-serif;
+  background-color: #f9f9f9;
+}
+
+.veggie-section h2 {
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 35px;
+  border-bottom: 3px solid #4caf50;
+  display: inline-block;
+  padding-bottom: 6px;
+  color: #333;
+}
+
+.veggie-grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 55px;
+  max-width: calc((200px * 5) + (55px * 4));
+  margin: 0 auto; 
+}
+
+
+.veggie-card {
+  width: 200px;
+  border: 1px solid #e0e0e0;
+  border-radius: 16px;
+  padding: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.veggie-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.veggie-card img {
+  width: 130px;
+  height: 130px;
+  object-fit: contain;
+  margin-bottom: 10px;
+  border-radius: 8px;
+}
+
+.category {
+  color: #888;
+  font-size: 13px;
+  margin-bottom: 5px;
+}
+
+h3 {
+  font-size: 16px;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.stars {
+  color: #4caf50;
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.stars .count {
+  color: #666;
+  font-size: 13px;
+  margin-left: 5px;
+}
+
+.price {
+  margin-bottom: 12px;
+}
+
+.price .new {
+  color: #4caf50;
+  font-weight: bold;
+  margin-right: 8px;
+}
+
+.price .old {
+  text-decoration: line-through;
+  color: #aaa;
+  font-size: 14px;
+}
+
+.add-btn {
+  background: #e0f5e9;
+  border: 1px solid #4caf50;
+  padding: 6px 15px;
+  color: #4caf50;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: background 0.3s, color 0.3s;
+}
+
+.add-btn:hover {
+  background-color: #4caf50;
+  color: #fff;
+}

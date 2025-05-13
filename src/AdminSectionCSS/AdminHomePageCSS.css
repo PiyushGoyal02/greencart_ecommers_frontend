@@ -1,0 +1,71 @@
+.Sidebar-DifferentSections{
+    display: flex;
+}
+
+.AdminNavbarForMobilePhone{
+        display: none;
+    }
+
+.AdminNavbarForWebsite{
+    display: block;
+}
+
+/* Side bar code */
+
+.AdminSidebardiv{
+    height: 89vh;
+    width: 280px;
+    border-right: 1px solid rgb(157, 157, 157);
+}
+
+.DivSection{
+    display: flex;
+    align-items: center;
+    padding: 1%;
+    gap: 12px;
+    padding-left: 22px;
+    cursor: pointer;
+    margin-top: 2%;
+}
+
+.DivSection.active {
+    background-color: #cfeed0; 
+    border-right: 5px solid #4caf50; 
+    border-radius: 5px 0 0 5px;
+}
+
+.Icons{
+    font-size: 25px;
+}
+
+.Ptag-text{
+    font-size: 18px;
+    font-weight: 300;
+}
+
+@media (max-width:768px ){
+
+    .AdminNavbarForMobilePhone{
+        display: block;
+    }
+
+    .AdminNavbarForWebsite{
+        display: none;
+    }
+
+    .AdminSidebardiv{
+        /* margin-top: 15px; */
+        overflow-y: hidden;
+        height: 89vh;
+        width: 60px;
+        border-right: 1px solid rgb(157, 157, 157);
+    }
+
+    .DivSection{
+        margin-bottom: 15px;
+    }
+
+    .Icons{
+    font-size: 22px;
+}
+}

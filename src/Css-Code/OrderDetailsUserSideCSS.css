@@ -1,0 +1,138 @@
+.order-summary-container {
+  max-width: 1200px;
+  margin: 60px auto;
+  padding: 0 24px;
+}
+
+.YourOrder {
+  font-size: 32px;
+  text-align: center;
+  margin-bottom: 40px;
+  color: #1f2937;
+  font-weight: 700;
+  padding-top: 3.5%;
+}
+
+.NoOrderFound {
+  text-align: center;
+  padding-top: 4%;
+}
+
+/* ===== Table View ===== */
+.table-container {
+  background-color: #fff;
+  padding: 24px;
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+  overflow-x: auto;
+}
+
+.order-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 12px;
+  font-size: 15px;
+}
+
+.order-table thead {
+  background-color: #f9fafb;
+}
+
+.order-table th {
+  text-align: left;
+  padding: 16px;
+  color: #374151;
+  font-weight: 600;
+  border-bottom: 2px solid #e5e7eb;
+}
+
+.order-table td {
+  background-color: #ffffff;
+  padding: 18px 16px;
+  border-bottom: 1px solid #f3f4f6;
+  border-radius: 8px;
+  vertical-align: top;
+}
+
+.order-table tr:hover td {
+  background-color: #f9fafb;
+  transition: background-color 0.2s;
+}
+
+/* Items List */
+.items-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.items-list li {
+  margin-bottom: 6px;
+  padding: 6px 10px;
+  background: #f3f4f6;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+/* Status Badge */
+.status-badge {
+  display: inline-block;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: capitalize;
+  color: #fff;
+}
+
+.status-badge.pending {
+  background-color: #f59e0b;
+}
+
+.status-badge.delivered {
+  background-color: #10b981;
+}
+
+.status-badge.cancelled {
+  background-color: #ef4444;
+}
+
+/* ===== Mobile Card View ===== */
+.mobile-order-cards {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .YourOrder {
+    font-size: 24px;
+  }
+
+  .table-container.desktop-only {
+    display: none;
+  }
+
+  .mobile-order-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 20px;
+  }
+
+  .order-card {
+    background-color: #fff;
+    padding: 16px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    font-size: 14px;
+  }
+
+  .order-card p {
+    margin: 8px 0;
+    line-height: 1.4;
+  }
+
+  .items-list li {
+    font-size: 13px;
+    margin: 4px 0;
+  }
+}

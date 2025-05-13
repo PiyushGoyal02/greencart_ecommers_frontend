@@ -1,0 +1,70 @@
+.custom-slider-container {
+  position: relative;
+  width: 100%;
+  /* max-width: 1200px; */
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.AllImages{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.custom-slider-image {
+  width: 90%;
+  height: 600px;
+  margin-top: 8%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Button styles */
+.slider-btn {
+  position: absolute;
+  top: calc(8% + 250px); 
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 12px;
+  cursor: pointer;
+  border-radius: 100%;
+  font-size: 20px;
+  z-index: 2;
+  transition: background-color 0.3s ease;
+}
+
+.left-btn {
+  left: 25px;
+}
+
+.right-btn {
+  right: 25px;
+}
+
+.slider-btn:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+
+@media (max-width: 768px) {
+
+  .custom-slider-container {
+    margin-top: 70px;
+  }
+
+  .custom-slider-image {
+    width: 90%;
+    height: 250px;
+    margin-top: 8%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  }
+}

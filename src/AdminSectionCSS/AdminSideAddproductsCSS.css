@@ -1,0 +1,225 @@
+.MainDivAddProducts{
+    margin: 5%;
+}
+
+.productsImages{
+    font-size: 17.5px;
+    font-weight: 500;
+    margin-left: 15px;
+}
+
+.singleImageBox {
+  width: 120px;
+  height: 100px;
+  border: 1px dashed #ccc;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  color: #666;
+  font-size: 14px;
+  cursor: pointer;
+  margin-bottom: 15px;
+}
+
+.previewImage{
+    width: 120px;
+    height: 135px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.removeBtnImage{
+    font-size: 18px;
+    margin-top: 10px;
+    /* cursor: pointer; */
+}
+
+.image-container {
+  display: flex;
+  gap: 10px;
+  margin-left: 15px;
+}
+
+.labelText{
+    font-size: 17.5px;
+    font-weight: 500;
+    margin-bottom: 3.5px;
+}
+
+.LabelInputDiv{
+    text-align: start;
+    display: flex;
+    flex-direction: column;
+}
+
+.ProductsName{
+    width: 600px;
+    border: 1px solid #dadada;
+    background-color: white;
+    border-radius: 5px;
+    padding: 2.5%;
+    font-size: 16.5px;
+    margin-bottom: 18px;
+}
+
+.DescriptionText{
+    text-align: start;
+    width: 600px;
+    border: 1px solid #dadada;
+    background-color: white;
+    border-radius: 5px;
+    padding: 2.5%;
+    font-size: 16.5px;
+    height: 120px;
+    margin-bottom: 18px;
+}
+
+.OptionSection{
+    width: 600px;
+    border: 1px solid #dadada;
+    background-color: white;
+    border-radius: 5px;
+    padding: 2.5%;
+    font-size: 16.5px;
+    margin-bottom: 18px;
+}
+
+.Productsprice-Productsquantity-MainDiv{
+    display: flex;
+    align-items: center;
+    gap: 26px;
+}
+
+.ProdcutsPrice{
+    width: 280px;
+    border: 1px solid #dadada;
+    background-color: white;
+    border-radius: 5px;
+    padding: 2.5%;
+    font-size: 16.5px;
+    margin-bottom: 15px;
+}
+
+.ProductsQuantity{
+    width: 280px;
+    border: 1px solid #dadada;
+    background-color: white;
+    border-radius: 5px;
+    padding: 2.5%;
+    font-size: 16.5px;
+    margin-bottom: 15px;
+}
+
+.buttonDiv{
+    display: flex;
+    justify-content: flex-end;
+    align-items: start;
+}
+
+.AddButton{
+    padding: 1%;
+    background-color: #4caf50;
+    border-color: #4caf50;
+    color: white;
+    border-style: none;
+    width: 80px;
+    height: 50px;
+    font-size: 18px;
+    border-radius: 10px;
+    transition: 0.5s;
+}
+
+.AddButton:hover {
+    background-color: #2d8500;
+    cursor: pointer;
+    border-color: black;
+    transition: 0.5s;
+    transform: scale(1.05);
+}
+
+
+@media (max-width: 768px) {
+    .MainDivAddProducts {
+        margin: 1%;
+    }
+
+    .productsImages {
+        font-size: 15px;
+        margin-left: 5px;
+    }
+
+    .labelText{
+        font-size: 15px;
+    }
+
+    .singleImageBox {
+        width: 80px;
+        height: 80px;
+        font-size: 13px;
+    }
+
+    .previewImage {
+        width: 90px;
+        height: 100px;
+    }
+
+    .removeBtnImage {
+        font-size: 16px;
+        margin-top: 8px;
+    }
+
+    .LabelInputDiv {
+        gap: 5px;
+        display: flex;
+        align-items: start;
+        justify-content: start;
+        margin-left: -42px;
+    }
+
+    .ProductsName,
+    .DescriptionText,
+    .OptionSection {
+        width: 300px;
+        font-size: 15px;
+        padding: 10px;
+    }
+
+    .DescriptionText {
+        height: 100px;
+    }
+
+    .Productsprice-Productsquantity-MainDiv {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 55px;
+    }
+
+    .ProdcutsPrice,
+    .ProductsQuantity {
+        width: 100%;
+        font-size: 15px;
+        padding: 10px;
+    }
+
+    .buttonDiv{
+        display: flex;
+        justify-content: start;
+        align-items: start;
+    }
+
+    .AddButton{
+        padding: 1%;
+        background-color: #4caf50;
+        border-color: #4caf50;
+        color: white;
+        border-style: none;
+        width: 60px;
+        height: 40px;
+        font-size: 16px;
+        border-radius: 10px;
+        transition: 0.5s;
+    }
+}

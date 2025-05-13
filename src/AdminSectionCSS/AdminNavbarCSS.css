@@ -1,0 +1,71 @@
+.AdminNavbar-Section{
+  height: 80px;
+  width: 100%;
+  background-color: white;
+  color: black;
+  padding: 0 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: "Montserrat", sans-serif;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.AdminNavbar-logo {
+  width: 150px;
+}
+
+.HeyAdmintext-Logoutbutton{
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.LogoutButton {
+  border: 1px solid #dadada;
+  border-radius: 100px;
+  cursor: pointer;
+  background-color: white;
+  color: rgb(35, 34, 34);
+  font-weight: 300;
+  font-size: 14px;
+  padding: 8px;
+  width: 80px;
+  transition: all 0.3s ease;
+}
+
+.LogoutButton:hover {
+  border-color: #4caf50;
+  color: #4caf50;
+  transform: scale(1.05);
+}
+
+@media (max-width:768px) {
+
+  .AdminNavbar-Section{
+    height: 50px;
+    width: 100%;
+  }
+
+  .AdminNavbar-logo{
+    width: 80px;
+  }
+
+  .HeyAdmintext-Logoutbutton p {
+    font-size: 12px;
+  }
+
+  .LogoutButton {
+    border: 1px solid #dadada;
+    border-radius: 100px;
+    cursor: pointer;
+    background-color: white;
+    color: rgb(35, 34, 34);
+    font-weight: 300;
+    font-size: 11px;
+    padding: 5px;
+    width: 50px;
+    transition: all 0.3s ease;
+  }
+
+}

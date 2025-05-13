@@ -1,0 +1,322 @@
+/* ShoppingCart.css */
+
+.WebsiteUi {
+  display: block;
+}
+
+.MobilePhoneUi{
+  display: none;
+}
+
+.shopping-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 120px;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.cart {
+  width: 60%;
+}
+
+.cart h2 {
+  font-size: 26px;
+  margin-bottom: 10px;
+  color: rgb(61, 63, 76);
+}
+
+.green {
+  color: #2ecc71;
+  font-size: 18px;
+}
+
+.item-left{
+  display: flex;
+  align-items: center;
+  /* gap: 10px; */
+}
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #ddd;
+  margin-top: 5px;
+}
+
+.cart-item img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  margin-right: 20px;
+}
+
+.details {
+  flex: 1;
+}
+
+.details h5 {
+  margin: 0;
+  font-size: 18px;
+  color: rgb(61, 63, 76);
+}
+
+.details p {
+  margin: 2px 0;
+  color: #666;
+}
+
+.subtotal {
+  font-weight: bold;
+  margin-right: 20px;
+  /* display: flex;
+  align-items: center; */
+}
+
+.Products-Subtotal-Action-text{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.removeIMG {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.removeIMG svg {
+  color: #e74c3c;
+  font-size: 25px;
+  transition: transform 0.2s ease-in-out;
+}
+
+.removeIMG:hover svg {
+  transform: scale(1.2);
+}
+
+
+.qtySelect {
+  padding: 3px 10px;
+  font-size: 14px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  width: 50px;
+  max-width:55px;
+}
+
+.ContinuesShoopingDiv{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: #2ecc71;
+    cursor: pointer;
+}
+
+.continue {
+  display: inline-block;
+  margin-top: 20px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.ContinuesShoopingDiv:hover svg {
+  transform: translateX(-5px);
+  transition: transform 0.5s ease-in-out;
+}
+
+
+.summary {
+  width: 35%;
+  background: #f6f6f6;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.summary h3 {
+  margin-bottom: 20px;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.change {
+  color: #2ecc71;
+  font-size: 14px;
+}
+
+.change:hover{
+  cursor: pointer;
+  border-bottom: 1px solid #2ecc71;
+}
+
+.gray {
+  color: #888;
+  margin: 5px 0 20px;
+}
+
+.AddressUI {
+  border: 1px solid grey;
+  height: 50px;
+  width: 400px;
+  border-radius: 10px;
+  overflow-y: auto;
+  padding: 2%;
+
+  /* Hide scrollbar */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
+
+.AddressUI::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+
+.bold {
+  font-weight: bold;
+  margin: 10px 0 5px;
+}
+
+select {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 20px;
+}
+
+.Cash-UPI-Card-Dropdown{
+    padding: 5px 10px;
+    font-size: 14px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    width: 100%;
+}
+
+.costs, .total {
+  display: flex;
+  justify-content: space-between;
+  margin: 8px 0;
+}
+
+.total {
+  font-weight: bold;
+  font-size: 18px;
+  margin-top: 15px;
+}
+
+.place-order {
+  width: 100%;
+  padding: 12px;
+  background: #2ecc71;
+  border: none;
+  color: white;
+  font-size: 16px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+
+/* Responsive Design for Mobile Devices */
+@media (max-width: 768px) {
+  .shopping-container {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .WebsiteUi {
+    display: none;
+  }
+
+  .MobilePhoneUi{
+    display: block;
+  }
+
+  .cart {
+    width: 100%;
+  }
+
+  .summary {
+    width: 100%;
+    margin-top: 30px;
+  }
+
+  .cart h2 {
+    font-size: 20px;
+  }
+
+  .Products-Subtotal-Action-text {
+    display: none; /* hide headers for mobile */
+  }
+
+  .cart-item {
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+  }
+
+  .item-left {
+    display: flex;
+    align-items: center;
+  }
+
+  .productImageNameDiv{
+    display: flex;
+    /* align-items: center; */
+    flex-direction: column;
+  }
+
+  .ProductName{
+    margin-top: -5px;
+    text-align: start;
+  }
+
+  .cart-item img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+  }
+
+  .productWeight{
+    display: none;
+  }
+
+  .subtotal {
+    margin: 10px 0;
+  }
+
+  .AddressUI {
+    width: 100%;
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .qtySelect {
+    width: 100%;
+  }
+
+  .Cash-UPI-Card-Dropdown {
+    width: 100%;
+  }
+
+  .total {
+    font-size: 16px;
+  }
+
+  .place-order {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .continue {
+    font-size: 14px;
+  }
+}

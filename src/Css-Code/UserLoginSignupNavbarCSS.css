@@ -1,0 +1,36 @@
+.navbar {
+  height: 80px; 
+  width: 100%;
+  background-color: #053262;
+  color: white;
+  padding: 0 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: 'Montserrat', sans-serif;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+.navbar-logo {
+  width: 150px;
+}
+
+.navbar-links {
+  display: flex;
+  gap: 25px;
+  list-style: none;
+}
+
+.navbar-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px; 
+  transition: opacity 0.3s ease;
+}
+
+.navbar-links a:hover {
+  opacity: 0.8;
+}

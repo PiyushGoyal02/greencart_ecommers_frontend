@@ -1,0 +1,230 @@
+.SingleProductUiForMobilePhone {
+  display: none;
+}
+
+.SingleProductUiForWebsite {
+  display: block;
+}
+
+.ProductContentDiv {
+  padding: 100px;
+}
+
+.productContentSectionDiv {
+  display: flex;
+  gap: 55px;
+}
+
+.productNameHeading {
+  margin-left: 110px;
+}
+
+.ProductImagesSmallandBig {
+  display: flex;
+  align-items: start;
+  gap: 15px;
+}
+
+.SmallImageDiv {
+  border: 0.5px solid #dadada;
+  padding: 5px;
+  border-radius: 10px;
+}
+
+.productImageSmall {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.productImageBig {
+  width: 100%;
+  max-width: 510px;
+  aspect-ratio: 1 / 1; /* Maintains square shape */
+  border: 0.5px solid #dadada;
+  border-radius: 10px;
+  padding: 5px;
+  object-fit: cover;
+  object-position: center;
+  box-sizing: border-box;
+}
+
+.ProductDescription {
+  font-size: 25px;
+  width: 550px;
+  line-height: 25px;
+  font-weight: 400;
+}
+
+.productStars {
+  font-size: 22px;
+}
+
+.oldAmount {
+  color: gray;
+  font-size: 16px;
+  text-decoration: line-through;
+  margin-bottom: 8px;
+}
+
+.LatestPrice {
+  font-size: 24px;
+  color: black;
+  margin-top: -5px;
+}
+
+.InclusiveOfAllTaxes {
+  font-size: 15px;
+  color: grey;
+  margin-top: -20px;
+}
+
+.Abouttext {
+  color: #4caf50;
+  font-size: 25px;
+  font-weight: 500;
+}
+
+.BulletPointSection {
+  margin-top: -10px;
+}
+
+.BulletPoint {
+  font-size: 13px;
+  color: grey;
+}
+
+.TwoButtonsDiv {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.ButtonAddtoCart,
+.ButNowButton {
+  width: 270px;
+  height: 45px;
+  font-size: 18px;
+  font-weight: 500;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.ButtonAddtoCart {
+  background-color: #dadada;
+  color: black;
+}
+
+.ButtonAddtoCart:hover {
+  background-color: #c4c4c4;
+  transform: scale(1.03);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.ButNowButton {
+  background-color: #4caf50;
+  color: white;
+}
+
+.ButNowButton:hover {
+  background-color: #43a047;
+  transform: scale(1.03);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+@media (max-width: 768px) {
+  .SingleProductUiForMobilePhone {
+    display: block;
+  }
+
+  .SingleProductUiForWebsite {
+    display: none;
+  }
+
+  .productContentSectionDiv {
+    display: flex;
+    flex-direction: column;
+    gap: 55px;
+  }
+
+  .productNameHeading {
+    font-size: 15px;
+    margin-left: -4px;
+  }
+
+  .ProductContentDiv {
+    padding: 25px;
+    margin-top: 70px;
+  }
+
+  .productImageBig {
+    height: 210px;
+    width: 250px;
+    padding: 3px;
+    border-radius: 8px;
+  }
+
+  .productImageSmall {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .ProductDescription {
+    font-size: 15.6px;
+    width: 250px;
+    line-height: 25px;
+    font-weight: 400;
+    margin-top: -15px;
+  }
+
+  .oldAmount {
+    font-size: 12px;
+  }
+
+  .LatestPrice {
+    font-size: 20px;
+  }
+
+  .InclusiveOfAllTaxes {
+    font-size: 18px;
+  }
+
+  .Abouttext {
+    color: #4caf50;
+    font-size: 18px;
+    font-weight: 500;
+  }
+
+  .BulletPointSection {
+    line-height: 5px;
+  }
+
+  .BulletPoint {
+    font-size: 13px;
+  }
+
+  .TwoButtonsDiv {
+    display: flex;
+    align-items: start;
+    justify-content: start;
+    gap: 20px;
+  }
+
+  .ButtonAddtoCart,
+  .ButNowButton {
+    width: 110px;
+    height: 40px;
+    font-size: 16px;
+    font-weight: 500;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+}
