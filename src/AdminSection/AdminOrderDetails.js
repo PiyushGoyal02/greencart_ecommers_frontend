@@ -10,7 +10,7 @@ function AdminOrderDetails() {
   useEffect(() => {
     const fetchOrders = async () => {
       try {
-        const response = await axios.get(`https://greencart-ecommers-backend.onrender.com/api/v1/getAllorderData/getAllorderData`);
+        const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/v1/getAllorderData/getAllorderData`);
 
         const OrderData = response.data.data;
         const formattedOrders = OrderData.map(order => ({
@@ -41,7 +41,7 @@ function AdminOrderDetails() {
     // console.log(`Order ID: ${orderId}, Selected Value: ${value}`);
     try{
 
-      const orderTrackingResponse = await axios.post(`https://greencart-ecommers-backend.onrender.com/api/v1/updateTracking/updateTracking`, {
+      const orderTrackingResponse = await axios.post(`${process.env.REACT_APP_API_URL}/api/v1/updateTracking/updateTracking`, {
         orderId: orderId,
         status: value,
       })

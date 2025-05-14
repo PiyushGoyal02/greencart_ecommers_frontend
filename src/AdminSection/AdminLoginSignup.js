@@ -44,7 +44,7 @@ function AdminLoginSigup() {
     e.preventDefault();
     try {
       const responceSignup = await axios.post(
-        `https://greencart-ecommers-backend.onrender.com/api/v1/signup/signup`,
+        `${process.env.REACT_APP_API_URL}/api/v1/signup/signup`,
         SignUp,
         {
           headers: {"Content-Type": "application/json"},
@@ -63,7 +63,7 @@ function AdminLoginSigup() {
     e.preventDefault();
     try {
       const responceLogin = await axios.post(
-        `https://greencart-ecommers-backend.onrender.com/api/v1/adminLogin/adminlogin`,
+        `${process.env.REACT_APP_API_URL}/api/v1/adminLogin/adminlogin`,
         LogIn,
         {
           headers: { "Content-Type": "application/json" },

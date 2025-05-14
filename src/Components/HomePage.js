@@ -25,7 +25,7 @@ function HomePage() {
     const fetchProducts = async () => {
       try {
         const response = await axios.get(
-          `https://greencart-ecommers-backend.onrender.com/api/v1/getAllProductsDetails/getAllProducts`,
+          `${process.env.REACT_APP_API_URL}/api/v1/getAllProductsDetails/getAllProducts`,
           { withCredentials: true }
         );
         setProducts(response.data.data);

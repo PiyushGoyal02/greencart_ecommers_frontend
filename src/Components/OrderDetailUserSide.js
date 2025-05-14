@@ -13,7 +13,7 @@ function OrderDetailsUserSide() {
   const getAllOrderDetails = async () => {
     try {
       const response = await axios.get(
-        "https://greencart-ecommers-backend.onrender.com/api/v1/getAllorderData/getAllorderData",
+        `${process.env.REACT_APP_API_URL}/api/v1/getAllorderData/getAllorderData`,
         {
           headers: { "Content-Type": "application/json" },
         }

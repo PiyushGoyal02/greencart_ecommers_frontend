@@ -75,7 +75,7 @@ function CartSection() {
 
     console.log(process.env.REACT_APP_RAZORPAY_KEY_ID, "Rezorpay_ID")
 
-    const orderResponse = await axios.post("https://greencart-ecommers-backend.onrender.com/api/v1/placeOrder/placeOrder", orderPayload, {
+    const orderResponse = await axios.post(`${process.env.REACT_APP_API_URL}/api/v1/placeOrder/placeOrder`, orderPayload, {
       headers: { "Content-Type": "application/json" },
     });
 
