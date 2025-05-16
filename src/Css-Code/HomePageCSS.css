@@ -270,4 +270,32 @@ h3 {
     object-fit: cover;
     object-position: center;
   }
+
+  .newsletter-title{
+    font-size: 19px;
+  }
+
+  newsletter-subtitle{
+    font-size: 15px;
+  }
+
+  .newsletter-input {
+    flex: 1;
+    padding: 10px 4px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 6px 0 0 6px;
+    outline: none;
+  }
+
+  .newsletter-button {
+    background-color: #40b883;
+    color: white;
+    padding: 11px 12px;
+    border: none;
+    border-radius: 0 6px 6px 0;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+  }
 }

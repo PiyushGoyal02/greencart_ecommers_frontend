@@ -1,3 +1,11 @@
+/* General Reset for Body */
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* Section Styling */
 .veggie-section {
   padding: 60px 20px;
   text-align: center;
@@ -15,16 +23,19 @@
   color: #333;
 }
 
+/* Grid Container */
 .veggie-grid {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 55px;
-  max-width: calc((200px * 5) + (55px * 4));
-  margin: 0 auto; 
+  gap: 30px;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 10px;
+  box-sizing: border-box;
 }
 
-
+/* Card Styling */
 .veggie-card {
   width: 200px;
   border: 1px solid #e0e0e0;
@@ -33,6 +44,7 @@
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   background-color: #fff;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  box-sizing: border-box;
 }
 
 .veggie-card:hover {
@@ -103,4 +115,64 @@ h3 {
 .add-btn:hover {
   background-color: #4caf50;
   color: #fff;
+}
+
+/* Mobile Responsive Styling */
+@media (max-width: 768px) {
+
+  .AllproductsText{
+    margin-top: 8%;
+  }
+
+  .veggie-section {
+    padding: 40px 10px;
+  }
+
+  .veggie-section h2 {
+    font-size: 22px;
+  }
+
+  .veggie-grid {
+    gap: 10px;
+    padding: 0 5px;
+  }
+
+  .veggie-card {
+    width: calc(50% - 10px); /* Two cards per row */
+    padding: 12px;
+  }
+
+  .veggie-card img {
+    width: 90px;
+    height: 90px;
+  }
+
+  .category {
+    font-size: 12px;
+  }
+
+  h3 {
+    font-size: 14px;
+  }
+
+  .stars {
+    font-size: 12px;
+  }
+
+  .stars .count {
+    font-size: 11px;
+  }
+
+  .price .new {
+    font-size: 13px;
+  }
+
+  .price .old {
+    font-size: 12px;
+  }
+
+  .add-btn {
+    font-size: 12px;
+    padding: 5px 10px;
+  }
 }

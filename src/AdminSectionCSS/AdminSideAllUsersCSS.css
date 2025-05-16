@@ -1,25 +1,25 @@
 .AllUserstext {
-  margin: 5%;
-  font-size: 1.5rem;
+  margin: 5% 0;
+  font-size: 1.6rem;
   text-align: center;
+  font-weight: bold;
+  color: #222;
 }
 
 .admin-main {
-  margin: 5%;
+  margin: 0 5%;
   overflow-y: auto;
   max-height: 480px;
   width: 100%;
 }
 
-/* Remove scrollbar styling */
-.admin-main {
-  overflow: auto;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-}
-
+/* Hide scrollbars */
 .admin-main::-webkit-scrollbar {
   display: none;
+}
+.admin-main {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 
 .admin-user-list {
@@ -28,49 +28,62 @@
   gap: 16px;
 }
 
+/* USER CARD */
 .user-card {
-  width: 650px;
+  width: 100%;
+  max-width: 700px;
   margin: 0 auto;
   display: flex;
   flex-direction: row;
   align-items: center;
-  background-color: white;
+  background-color: #ffffff;
   border: 1px solid #e0e0e0;
   padding: 16px;
-  border-radius: 10px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
   transition: all 0.2s ease-in-out;
 }
 
 .user-card:hover {
   transform: scale(1.01);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
 }
 
 .user-icon {
-  font-size: 40px;
+  font-size: 48px;
   margin-right: 20px;
   color: #4caf50;
 }
 
+.user-details {
+  flex: 1;
+}
+
 .user-details h3 {
-  margin: 0 0 8px 0;
-  color: #333;
+  margin: 0 0 6px 0;
   font-size: 1.1rem;
+  font-weight: 600;
+  color: #333;
 }
 
 .user-details p {
   margin: 4px 0;
+  font-size: 0.95rem;
   color: #555;
-  font-size: 0.9rem;
+  word-wrap: break-word;
 }
 
-/* Responsive CSS for mobile phone */
+/* MOBILE STYLING */
 @media (max-width: 768px) {
+  .AllUserstext {
+    font-size: 1.4rem;
+    text-align: left;
+    padding-left: 5%;
+  }
+
   .admin-main {
-    margin: 5%;
-    max-height: none;
-    width: 100%;
+    margin: 0 5%;
+    max-height: unset;
   }
 
   .user-card {
@@ -80,28 +93,34 @@
   }
 
   .user-icon {
-    margin-bottom: 10px;
     margin-right: 0;
+    margin-bottom: 10px;
   }
 
-  .user-details h3,
-  .user-details p {
+  .user-details h3 {
     font-size: 1rem;
+  }
+
+  .user-details p {
+    font-size: 0.9rem;
   }
 }
 
 @media (max-width: 480px) {
   .AllUserstext {
-    font-size: 1.3rem;
-    text-align: start;
+    font-size: 1.2rem;
   }
 
   .user-card {
     padding: 10px;
+    border-radius: 10px;
   }
 
-  .user-details h3,
+  .user-details h3 {
+    font-size: 0.95rem;
+  }
+
   .user-details p {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
   }
 }

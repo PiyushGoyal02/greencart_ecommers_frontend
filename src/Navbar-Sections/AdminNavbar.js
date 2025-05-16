@@ -13,7 +13,7 @@ function AdminNavbar() {
 
             <div className="HeyAdmintext-Logoutbutton">
                 <p>Hi! Admin</p>
-                <button className="LogoutButton">Logout</button>
+                <button onClick={() => Navigator('/adminloginsignup')} className="LogoutButton">Logout</button>
             </div>
         </div>
     );
