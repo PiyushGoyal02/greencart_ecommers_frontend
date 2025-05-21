@@ -17,6 +17,9 @@ function HomePageNavbar() {
     const [menuOpen, setMenuOpen] = useState(false);  // State to manage the side menu open/close
     const [searchTerm, setSearchTerm] = useState("");  // State to manage the search term
 
+    const cartData = JSON.parse(localStorage.getItem("cart")) || [];  // Get cart data from local storage
+    const cartCount = cartData.length;   // Count the number of items in the cart
+
     const handleSearch = () => {
         if (searchTerm.trim()) {    //  .trim It meanes remove extra spaces (start to end)
         Navigator(`/allproductsui?search=${encodeURIComponent(searchTerm.trim())}`);
@@ -81,7 +84,7 @@ function HomePageNavbar() {
                         <div className="icons-section">
                             <div className="cart-icon">
                                 <AiOutlineShoppingCart onClick={() => Navigator("/cartsection")}/>
-                                <span className="cart-count">0</span>
+                                <span className="cart-count">{cartCount}</span>
                             </div>
                             <div>
                                 <img onClick={() => setOpen(!open)} src={PersonImage} className="PersonImage" alt="User" />

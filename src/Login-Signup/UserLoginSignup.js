@@ -43,13 +43,15 @@ const UserLoginSignup = () => {
       });
 
       const SignupEmail = res.data.user.email
+      const UserAddress = res.data.user.address
       console.log(SignupEmail, "email")
       const userSignupUserid = res.data.user._id;
       
       // console.log(userSignupUserid)
       localStorage.setItem("userSignupUserid", userSignupUserid);
+      localStorage.setItem("UserAddress", UserAddress)
       toast.success("Signup successful!");
-      navigate("/homepage");
+      navigate("/profiledetails");
       setLoading(false)
 
       // This API for Email sendar

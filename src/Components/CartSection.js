@@ -28,7 +28,7 @@ function CartSection() {
   const tax = (price * 0.02).toFixed(2);
   const total = (price + parseFloat(tax)).toFixed(2);
 
-  const AfterLoginUserAddress = localStorage.getItem("AfterLoginUserAddress");
+  const AfterLoginUserAddress = localStorage.getItem("AfterLoginUserAddress") || localStorage.getItem("UserAddress");
   
   const cartItemsHandler = async () => {
   if (!AfterLoginUserAddress || AfterLoginUserAddress === "No address available") {
