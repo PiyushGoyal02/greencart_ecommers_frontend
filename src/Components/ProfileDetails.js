@@ -65,7 +65,7 @@ function ProfileDetails() {
       const final = profileDetailsResponce.data;
       console.log(final);
       toast.success("Your Data Softly Updated!");
-      Navigator('/homepage')
+      Navigator("/homepage");
     } catch (error) {
       console.log(error.message);
       toast.error("Your Profile Didn't Update");
