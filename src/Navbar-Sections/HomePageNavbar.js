@@ -42,6 +42,12 @@ function HomePageNavbar() {
         return () => document.removeEventListener("mousedown", handleClickOutside);
     }, []);
 
+    function AfterClickLogoutButton() {
+        localStorage.removeItem("userLoginUserId");
+        localStorage.removeItem("userSignupUserid");
+        Navigator("/");
+    }
+
     return (
         <div>
 
@@ -96,7 +102,7 @@ function HomePageNavbar() {
                         <div className="dropdown-menu">
                             <button onClick={() => Navigator('/profiledetails')}>Profile</button>
                             <button onClick={() => Navigator('/orderdetailsuserside')}>Order History</button>
-                            <button onClick={() => Navigator('/')}>Logout</button>
+                            <button onClick={AfterClickLogoutButton}>Logout</button>
                         </div>
                     )}
                 </div>

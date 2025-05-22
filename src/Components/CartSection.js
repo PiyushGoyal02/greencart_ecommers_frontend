@@ -10,6 +10,10 @@ import axios from "axios";
 function CartSection() {
   const Navigator = useNavigate();
   const [cartItems, setCartItems] = useState([]);
+  const [users, setUserDetails] = useState([]);   // getAllUserData From API
+  const [error, setError] = useState(null);    // getAllUserData From API error mesage
+  const [loading, setLoading] = useState(true);  // getAllUserData From API Loading
+  const [loggedInUserAddress, setLoggedInUserAddress] = useState(null);   // getAllUserData From API address
   const [paymentMethod, setPaymentMethod] = useState({ paymentValue: "" });
   
   useEffect(() => {
@@ -17,6 +21,7 @@ function CartSection() {
     setCartItems(storedCart);
   }, []);
 
+  // Dustbene Function I mean remove any product from cartSection
   const removeFromCart = (id) => {
     const updatedCart = cartItems.filter((item) => item._id !== id);
     localStorage.setItem("cart", JSON.stringify(updatedCart));
@@ -24,101 +29,130 @@ function CartSection() {
     toast.success("Removed from cart");
   };
 
+  // Fetching all users data from API and get User Address
+  useEffect(() => {
+    const userId =
+      localStorage.getItem("userLoginUserId") ||
+      localStorage.getItem("userSignupUserid");
+
+    const fetchUsers = async () => {
+      try {
+        const response = await axios.get(
+          `${process.env.REACT_APP_API_URL}/api/v1/getAllusersData/allUserDetails`,
+          {
+            withCredentials: true,
+          }
+        );
+
+        const users = response.data.data;
+        setUserDetails(users);
+
+        // ✅ Match user by ID and extract address
+        const matchedUser = users.find(user => user._id === userId);
+
+        if (matchedUser) {
+          setLoggedInUserAddress(matchedUser.address || "Address not available");
+        } else {
+          setLoggedInUserAddress("User not found");
+        }
+
+      } catch (err) {
+        console.error("Error fetching users:", err);
+        setError("Failed to fetch users.");
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchUsers();
+  }, []);
+
+  // price Section I mean Tax and Final Cost Add Subtotal
   const price = cartItems.reduce((acc, item) => acc + item.productprice * item.quantity, 0);
   const tax = (price * 0.02).toFixed(2);
   const total = (price + parseFloat(tax)).toFixed(2);
-
-  const AfterLoginUserAddress = localStorage.getItem("AfterLoginUserAddress") || localStorage.getItem("UserAddress");
   
+  // Cart Items Handler I mean Place Order
   const cartItemsHandler = async () => {
-  if (!AfterLoginUserAddress || AfterLoginUserAddress === "No address available") {
-    toast.error("Please add your address before placing the order!");
-    Navigator("/profiledetails");
-    return;
-  }
+    const userId = localStorage.getItem("userLoginUserId") || localStorage.getItem("userSignupUserid");
 
-  const userId = localStorage.getItem("userLoginUserId") || localStorage.getItem("userSignupUserid");
-
-  const combinedData = {
-    userId,
-    products: cartItems.map((item) => ({
-      name: item.productName,
-      price: item.productprice,
-      quantity: item.quantity,
-      image: item.productImages,
-      productId: item._id,
-    })),
-    totalAmount: total,
-  };
-
-  try {
-    const cartResponse = await axios.post("https://greencart-ecommers-backend.onrender.com/api/v1/cartItemsAdd/cartItemAdd", combinedData, {
-      headers: { "Content-Type": "application/json" },
-    });
-    const CartId = cartResponse.data.data._id;
-
-    const orderPayload = {
+    const combinedData = {
       userId,
-      cartId: CartId,
-      cartItems: cartItems.map(item => ({
-        productId: item._id,
+      products: cartItems.map((item) => ({
+        name: item.productName,
+        price: item.productprice,
         quantity: item.quantity,
-        productName: item.productName,
-        productPrice: item.productprice
+        image: item.productImages,
+        productId: item._id,
       })),
       totalAmount: total,
-      address: AfterLoginUserAddress,
-      payment: {
-        method: paymentMethod.paymentValue === "Cash On Delivery" ? "COD" : paymentMethod.paymentValue,
-      },
     };
 
-    console.log(process.env.REACT_APP_RAZORPAY_KEY_ID, "Rezorpay_ID")
+    try {
+      const cartResponse = await axios.post(`${process.env.REACT_APP_API_URL}/api/v1/cartItemsAdd/cartItemAdd`, combinedData, {
+        headers: { "Content-Type": "application/json" },
+      });
+      const CartId = cartResponse.data.data._id;
 
-    const orderResponse = await axios.post(`${process.env.REACT_APP_API_URL}/api/v1/placeOrder/placeOrder`, orderPayload, {
-      headers: { "Content-Type": "application/json" },
-    });
-
-    const { razorpayOrderId, amount } = orderResponse.data;
-    console.log(razorpayOrderId)
-    console.log(amount)
-
-    if (paymentMethod.paymentValue === "Cash On Delivery") {
-      toast.success("Order placed with COD!");
-      localStorage.removeItem("cart");
-      setCartItems([]);
-    } else {
-      const options = {
-        key: process.env.REACT_APP_RAZORPAY_KEY_ID,  // Replace with your actual Razorpay Key ID
-        amount: amount * 100,  // Amount in paise
-        currency: "INR",
-        order_id: razorpayOrderId,
-        name: "Green Market",
-        description: "Order Payment",
-        handler: function (response) {
-          toast.success("Payment Successful!");
-          localStorage.removeItem("cart");
-          setCartItems([]);
-          // Ideally, call backend to verify payment here
+      const orderPayload = {
+        userId,
+        cartId: CartId,
+        cartItems: cartItems.map(item => ({
+          productId: item._id,
+          quantity: item.quantity,
+          productName: item.productName,
+          productPrice: item.productprice
+        })),
+        totalAmount: total,
+        address: loggedInUserAddress,
+        payment: {
+          method: paymentMethod.paymentValue === "Cash On Delivery" ? "COD" : paymentMethod.paymentValue,
         },
-        prefill: {
-          name: "Customer Name",
-          email: "customer@example.com",
-          contact: "9896787236"
-        },
-        theme: {
-          color: "#3399cc"
-        }
       };
-      const rzp1 = new window.Razorpay(options);
-      rzp1.open();
-    }
 
-  } catch (error) {
-    console.log(error.message);
-    toast.error("An error occurred. Please try again!");
-  }
-};
+
+      const orderResponse = await axios.post("http://localhost:4000/api/v1/placeOrder/placeOrder", orderPayload, {
+        headers: { "Content-Type": "application/json" },
+      });
+
+      const { razorpayOrderId, amount } = orderResponse.data;
+
+      if (paymentMethod.paymentValue === "Cash On Delivery") {
+        toast.success("Order placed with COD!");
+        localStorage.removeItem("cart");
+        setCartItems([]);
+      } else {
+        const options = {
+          key: process.env.REACT_APP_RAZORPAY_KEY_ID,  // Replace with your actual Razorpay Key ID
+          amount: amount * 100,  // Amount in paise
+          currency: "INR",
+          order_id: razorpayOrderId,
+          name: "Green Market",
+          description: "Order Payment",
+          handler: function (response) {
+            toast.success("Payment Successful!");
+            localStorage.removeItem("cart");
+            setCartItems([]);
+            // Ideally, call backend to verify payment here
+          },
+          prefill: {
+            name: "Customer Name",
+            email: "customer@example.com",
+            contact: "98967*****"
+          },
+          theme: {
+            color: "#3399cc"
+          }
+        };
+        const rzp1 = new window.Razorpay(options);
+        rzp1.open();
+      }
+
+    } catch (error) {
+      console.log(error.message);
+      toast.error("An error occurred. Please try again!");
+    }
+  };
 
 
   const paymentMethodHandler = (e) => {
@@ -240,7 +274,7 @@ function CartSection() {
           </div>
 
           <div className="AddressUI">
-            <p>{AfterLoginUserAddress}</p>
+            <p>{loggedInUserAddress}</p>
           </div>
 
           <p className="bold">PAYMENT METHOD</p>
