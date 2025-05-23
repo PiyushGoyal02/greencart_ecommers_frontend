@@ -111,7 +111,7 @@ function CartSection() {
       };
 
 
-      const orderResponse = await axios.post("http://localhost:4000/api/v1/placeOrder/placeOrder", orderPayload, {
+      const orderResponse = await axios.post(`${process.env.REACT_APP_API_URL}/api/v1/placeOrder/placeOrder`, orderPayload, {
         headers: { "Content-Type": "application/json" },
       });
 
