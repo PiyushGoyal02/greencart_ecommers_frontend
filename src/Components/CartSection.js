@@ -138,7 +138,7 @@ function CartSection() {
           prefill: {
             name: "Customer Name",
             email: "customer@example.com",
-            contact: "98967*****"
+            contact: "9896774125"
           },
           theme: {
             color: "#3399cc"
