@@ -118,7 +118,7 @@ function CartSection() {
       const { razorpayOrderId, amount } = orderResponse.data;
 
       if (paymentMethod.paymentValue === "Cash On Delivery") {
-        toast.success("Order placed with COD!");
+        toast.success("Order placed with COD!")
         localStorage.removeItem("cart");
         setCartItems([]);
       } else {
